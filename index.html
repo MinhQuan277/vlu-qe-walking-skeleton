@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Đăng nhập</title>
+</head>
+<body>
+  <h2>Form Đăng Nhập</h2>
+  <form id="loginForm">
+    <label>Username: <input type="text" id="username"></label><br><br>
+    <label>Password: <input type="password" id="password"></label><br><br>
+    <button type="submit">Đăng nhập</button>
+  </form>
+  <p id="message"></p>
+
+  <script src="login.js"></script>
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const u = document.getElementById('username').value;
+      const p = document.getElementById('password').value;
+      document.getElementById('message').textContent =
+        checkLogin(u, p) ? 'Đăng nhập thành công!' : 'Sai tài khoản hoặc mật khẩu!';
+    });
+  </script>
+</body>
+</html>
